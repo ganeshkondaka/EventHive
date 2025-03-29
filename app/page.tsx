@@ -1,40 +1,35 @@
-import Link from "next/link";
+import { cn } from "@/lib/utils";
+import Hero from "./components/landingpage/Hero";
+import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
+import Eventscards from "./components/landingpage/Eventscards";
 
 export default function Home() {
   return (
-    <div className="flex flex-row justify-between py-28 ">
-
-      <div className="flex flex-col flex-2/4 gap-6 justify-center">
-
-        <p className="text-7xl font-bold bg-gradient-to-r from-purple-600 to-red-600 bg-clip-text text-transparent">Simplify Event Management</p>
-        <p className="text-xl text-zinc-300">Streamline planning, boost attendance, and create unforgettable experiences with our all-in-one event platform</p>
-
-        <div className="flex w-full gap-3">
-          <Link href={'/login'} className='px-8 py-3 font-bold rounded-lg bg-violet-600 text-xs sm:text-sm md:text-lg hover:bg-violet-700 hover:scale-105 transition duration-300'> Get started</Link>
-          <Link href={'/login'} className='px-8 py-3 font-bold rounded-lg bg-transparent border border-violet-600 text-xs sm:text-sm md:text-lg hover:bg-violet-800 hover:text-white hover:scale-105 transition duration-300'>Explore Features</Link>
-        </div>
-
-        <div className="flex items-center gap-2 px-3">
-          <div className="flex space-x-[-14px]">
-            <div className="rounded-full border border-black bg-zinc-300  text-[9px] w-10 h-10"></div>
-            <div className="rounded-full border border-black bg-zinc-300  text-[9px] w-10 h-10"></div>
-            <div className="rounded-full border border-black bg-zinc-300  text-[9px] w-10 h-10"></div>
-          </div>
-          <div className="text-zinc-300">Trusted by 5,000+ event planners</div>
-        </div>
-      </div>
-
-      <div className="flex flex-col flex-2/4 justify-center p-10">
-        {/* <img src="/hero.png" alt="" width={350}  /> */}
-        <div className="text-left mb-[-10px] z-10">
-          <p className="bg-zinc-700 px-6 py-2 rounded-lg w-auto inline-block">⭐ 4.9 Star Rating</p>
-        </div>
-        <img src="/landingpage.png" alt="landingpage" width={'full'} height={500} className="border border-zinc-700 rounded-xl mx-4 " />
-        <div className="text-right">
-          <p className="bg-zinc-700 mt-[-14px] px-6 py-2 rounded-lg w-auto inline-block">🟢 2,500+ events managed today</p>
+    <div>
+      <AnimatedGridPattern
+        numSquares={50}
+        maxOpacity={0.1}
+        duration={1}
+        repeatDelay={0.5}
+        className={cn(
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+        )}
+      />
+      <Hero />
+        <p className="text-5xl font-bold py-4">Trusted by thousand of Events</p>
+      <div>
+        <div className="flex gap-4 w-full py-2">
+          <input type="text" className="bg-zinc-700 rounded-full " />
+          <select name="cars" id="cars" className="bg-zinc-700 rounded-full px-2">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
         </div>
       </div>
-
+      <Eventscards></Eventscards>
     </div>
   );
 }
