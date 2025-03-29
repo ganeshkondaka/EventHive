@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-row justify-between py-28 ">
 
-      <div className="flex flex-col flex-2/4 gap-6">
+      <div className="flex flex-col flex-2/4 gap-6 justify-center">
 
         <p className="text-7xl font-bold bg-gradient-to-r from-purple-600 to-red-600 bg-clip-text text-transparent">Simplify Event Management</p>
         <p className="text-xl text-zinc-300">Streamline planning, boost attendance, and create unforgettable experiences with our all-in-one event platform</p>
@@ -26,6 +25,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col flex-2/4 justify-center p-10">
+        {/* <img src="/hero.png" alt="" width={350}  /> */}
         <div className="text-left mb-[-10px] z-10">
           <p className="bg-zinc-700 px-6 py-2 rounded-lg w-auto inline-block">⭐ 4.9 Star Rating</p>
         </div>
