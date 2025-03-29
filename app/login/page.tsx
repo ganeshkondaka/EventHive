@@ -1,11 +1,21 @@
-import React from 'react';
+'use client'
+
+import React, { useState } from 'react';
 
 const Signup = () => {
+    const [email, setemail] = useState('')
+    const [password, setpassword] = useState('')
+
+    const handle_submit = async (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        console.log('emai and password is :', email, password)
+    }
+
     return (
         <div className="min-h-screen flex items-center justify-center  text-white">
             <div className="w-full max-w-md p-8 space-y-6 bg-zinc-800 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold text-center">Sign Up</h2>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handle_submit}>
 
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium">
@@ -17,6 +27,7 @@ const Signup = () => {
                             name="email"
                             className="w-full px-4 py-2 mt-1 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
                             placeholder="Enter your email"
+                            onChange={(e) => setemail(e.target.value)}
                             required
                         />
                     </div>
@@ -30,6 +41,7 @@ const Signup = () => {
                             name="password"
                             className="w-full px-4 py-2 mt-1 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
                             placeholder="Enter your password"
+                            onChange={(e) => setpassword(e.target.value)}
                             required
                         />
                     </div>
