@@ -5,19 +5,21 @@ import Eventscards from "./components/landingpage/Eventscards";
 
 export default function Home() {
   return (
-    <div>
-      <AnimatedGridPattern
-        numSquares={50}
-        maxOpacity={0.5}
-        duration={1}
-        repeatDelay={0.5}
-        className={cn(
-          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
-        )}
-      />
+    <div className="">
+      <div className=" ">
+        <AnimatedGridPattern
+          numSquares={50}
+          maxOpacity={0.5}
+          duration={1}
+          repeatDelay={0.5}
+          className={cn(
+            " [mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-[-1] pointer-events-none",
+          )}
+        />
+      </div>
       <Hero />
-        <p className="text-5xl font-bold py-4">Trusted by thousand of Events</p>
+      <p className="text-5xl font-bold py-4">Trusted by thousand of Events</p>
       <div>
         <div className="flex gap-4 w-full py-2">
           <input type="text" className="bg-zinc-700 rounded-full " />

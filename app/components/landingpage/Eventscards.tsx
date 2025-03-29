@@ -62,25 +62,27 @@ const Eventscards = () => {
     ]
 
     return (
-        <div className='grid grid-cols-3 justify-evenly '>
-            {
-                events.map((item, index) => (
-                    <div
-                        className='flex flex-col m-4 text-xs gap-4 p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700 hover:scale-105 transition-transform duration-300'
-                        key={index}
-                    >
-                        <img src={item.img_link} alt="events" className="rounded-2xl h-40 w-full overflow-hidden object-cover object-top" />
-                        <div className='flex gap-2'>
-                            <p className='px-3 py-1 bg-green-900 rounded-full'>{item.price}</p>
-                            <p className='px-3 py-1 bg-zinc-600 rounded-full'>{item.field}</p>
-                        </div>
-                        <div className='text-green-300'>{item.date_time}</div>
-                        <div className='text-lg font-bold'>{item.event_title}</div>
-                        <div className='text-yellow-400 pt-10'>{item.hostby}</div>
-                    </div>
-                ))
-            }
-        </div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-evenly w-full mt-12'>
+        {events.map((item, index) => (
+          <div
+            className='flex flex-col m-4 text-xs gap-4 p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700 hover:scale-105 transition-transform duration-300'
+            key={index}
+          >
+            <img 
+              src={item.img_link} 
+              alt="events" 
+              className="rounded-2xl h-40 w-full object-cover object-top" 
+            />
+            <div className='flex gap-2'>
+              <p className='px-3 py-1 bg-green-900 rounded-full'>{item.price}</p>
+              <p className='px-3 py-1 bg-zinc-600 rounded-full'>{item.field}</p>
+            </div>
+            <div className='text-green-300'>{item.date_time}</div>
+            <div className='text-lg font-bold'>{item.event_title}</div>
+            <div className='text-yellow-400 pt-10'>{item.hostby}</div>
+          </div>
+        ))}
+      </div>
     )
 }
 
