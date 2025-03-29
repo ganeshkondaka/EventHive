@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <AnimatedGridPattern
         numSquares={50}
-        maxOpacity={0.1}
+        maxOpacity={0.5}
         duration={1}
         repeatDelay={0.5}
         className={cn(

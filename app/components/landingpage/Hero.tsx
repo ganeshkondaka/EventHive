@@ -6,12 +6,12 @@ export default function Hero() {
 
       <div className="flex flex-col flex-2/4 gap-6 justify-center">
 
-        <p className="text-7xl font-bold bg-gradient-to-r from-purple-600 to-red-600 bg-clip-text text-transparent">Simplify Event Management</p>
+        <p className="text-7xl font-bold bg-gradient-to-r from-yellow-600 to-blue-600 bg-clip-text text-transparent">Simplify Event Management</p>
         <p className="text-xl text-zinc-300">Streamline planning, boost attendance, and create unforgettable experiences with our all-in-one event platform</p>
 
         <div className="flex w-full gap-3">
-          <Link href={'/login'} className='px-8 py-3 font-bold rounded-lg bg-violet-600 text-xs sm:text-sm md:text-lg hover:bg-violet-700 hover:scale-105 transition duration-300'> Get started</Link>
-          <Link href={'/login'} className='px-8 py-3 font-bold rounded-lg bg-transparent border border-violet-600 text-xs sm:text-sm md:text-lg hover:bg-violet-800 hover:text-white hover:scale-105 transition duration-300'>Explore Features</Link>
+          <Link href={'/login'} className='px-8 py-3 font-bold rounded-lg bg-yellow-600 text-xs sm:text-sm md:text-lg hover:bg-violet-700 hover:scale-105 transition duration-300'> Get started</Link>
+          <Link href={'/login'} className='px-8 py-3 font-bold rounded-lg bg-transparent border border-yellow-600 text-xs sm:text-sm md:text-lg hover:bg-white hover:text-black hover:scale-105 transition duration-300'>Explore Features</Link>
         </div>
 
         <div className="flex items-center gap-2 px-3">
@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="text-left mb-[-10px] z-10">
           <p className="bg-zinc-700 px-6 py-2 rounded-lg w-auto inline-block">⭐ 4.9 Star Rating</p>
         </div>
-        <img src="/landingpage.png" alt="landingpage" width={'full'} height={500} className="border border-zinc-700 rounded-xl mx-4 " />
+        <img src="/heroimg.png" alt="landingpage" width={'full'} height={500} className=" rounded-xl mx-4 object-cover " />
         <div className="text-right">
           <p className="bg-zinc-700 mt-[-14px] px-6 py-2 rounded-lg w-auto inline-block">🟢 2,500+ events managed today</p>
         </div>
