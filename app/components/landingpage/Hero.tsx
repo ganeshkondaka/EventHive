@@ -43,14 +43,14 @@ export default function Hero() {
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col lg:w-1/2 items-center mt-10 lg:mt-0">
+      <div className="flex flex-col lg:w-1/2  justify-center mt-10 lg:mt-0">
         <div className="text-left mb-2 md:mb-4">
           <p className="bg-zinc-700 px-4 py-2 rounded-lg text-sm md:text-base inline-block">
             ⭐ 4.9 Star Rating
           </p>
         </div>
         <img 
-          src="/heroimg.png" 
+          src="/heroimg_.jpg" 
           alt="landingpage" 
           className="rounded-xl w-full max-w-md sm:max-w-lg lg:max-w-full object-cover"
         />
