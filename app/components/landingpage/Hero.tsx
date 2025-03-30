@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row w-full gap-3 md:gap-5 justify-center lg:justify-start">
           <Link 
             href={'/login'}
-            className='px-6 md:px-8 py-3 font-bold rounded-lg bg-yellow-600 text-sm md:text-lg hover:bg-violet-700 hover:scale-105 transition duration-300 text-center'
+            className='px-6 md:px-8 py-3 font-bold rounded-lg bg-yellow-600 text-sm md:text-lg  hover:scale-105 transition duration-300 text-center'
           >
             Get started
           </Link>

@@ -36,5 +36,6 @@ const UserSchema = new Schema({
 
 })
 
-const usermodel = mongoose.model('user_model', UserSchema)
-module.exports = { usermodel }
+// Check if the model already exists before defining it
+const usermodel = mongoose.models.user_model || mongoose.model('user_model', UserSchema)
+export default usermodel

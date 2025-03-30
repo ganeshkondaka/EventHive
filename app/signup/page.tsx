@@ -1,5 +1,6 @@
 'use client'
 
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const Signup = () => {
@@ -11,6 +12,12 @@ const Signup = () => {
     const handle_submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         console.log('emai and password is :', username, email, password)
+        try {
+            const response = await axios.post('/api/signup', { username, email, password })
+            console.log('response :', response.data.user)
+        } catch (error) {
+            console.log('failed to create user :', error)
+        }
     }
 
     return (

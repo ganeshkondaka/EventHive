@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+// import { connectDb } from "@/db";
 
 
 const geistSans = Geist({
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
   title: "EventHive",
   description: "find all the events",
 };
+
+// const db = async () => {
+//   await connectDb()
+// }
+// db();
 
 export default function RootLayout({
   children,
