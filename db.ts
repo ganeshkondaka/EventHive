@@ -7,4 +7,5 @@ if (!mongourl) {
 
 export const connectDb = async () => {
     await mongoose.connect(mongourl);
+    console.log("connected to db");
 }

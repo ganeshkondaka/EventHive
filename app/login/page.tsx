@@ -1,20 +1,29 @@
 'use client'
 
+import axios from 'axios';
 import React, { useState } from 'react';
 
-const Signup = () => {
+const Login = () => {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
 
-    const handle_submit = async (e:React.FormEvent<HTMLFormElement>) => {
+    const handle_submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         console.log('emai and password is :', email, password)
+        try {
+            const response = await axios.post('/api/login', { email, password })
+            console.log('response :', response.data)
+            await localStorage.setItem("event_token", response.data.token)
+        } catch (error) {
+            console.log('failed to login user :', error)
+        }
     }
+
 
     return (
         <div className="min-h-screen flex items-center justify-center  text-white">
             <div className="w-full max-w-md p-8 space-y-6 bg-zinc-800 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold text-center">Sign Up</h2>
+                <h2 className="text-2xl font-bold text-center">Login</h2>
                 <form className="space-y-4" onSubmit={handle_submit}>
 
                     <div>
@@ -63,4 +72,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default Login;

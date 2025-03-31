@@ -14,7 +14,7 @@ const Signup = () => {
         console.log('emai and password is :', username, email, password)
         try {
             const response = await axios.post('/api/signup', { username, email, password })
-            console.log('response :', response.data.user)
+            console.log('response :', response.data)
             await localStorage.setItem("event_token", response.data.token)
         } catch (error) {
             console.log('failed to create user :', error)

@@ -10,7 +10,7 @@ const Navbar = () => {
             </div>
             <Link
                 href={'/login'}
-                className='px-5 py-1 rounded-lg bg-violet-600 text-xs md:text-lg'>Login</Link>
+                className='px-5 py-1 rounded bg-violet-600 text-xs md:text-lg'>Login</Link>
         </div>
     )
 }

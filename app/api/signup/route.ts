@@ -7,6 +7,14 @@ export async function POST(req: Request) {
     const { username, email, password } = await req.json()
     try {
         await connectDb()
+
+        const existed_user = await usermodel.findOne({ email })
+        console.log('exitsed user in signup :', existed_user)
+
+        if (existed_user) {
+            return NextResponse.json({ msg: "user already existed" })
+        }
+
         const user = await usermodel.create({
             username,
             email,
