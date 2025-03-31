@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Hero from "./components/landingpage/Hero";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import Eventscards from "./components/landingpage/Eventscards";
+import Features from "./components/landingpage/Features";
 
 export default function Home() {
   return (
@@ -20,18 +21,19 @@ export default function Home() {
       </div>
       <Hero />
       <p className="text-5xl font-bold py-4">Trusted by thousand of Events</p>
-      <div>
-        <div className="flex gap-4 w-full py-2">
-          <input type="text" className="bg-zinc-700 rounded-full " />
-          <select name="cars" id="cars" className="bg-zinc-700 rounded-full px-2">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+      <div className="pb-6">
+        <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-2 w-full h-8 py-2  ">
+          <input type="text" className="bg-zinc-700 rounded-full h-10 px-6" />
+          <select name="cars" id="cars" className="bg-zinc-700 rounded-full h-10 px-6 ">
+            <option value="volvo">AI</option>
+            <option value="saab">Webdev</option>
+            <option value="mercedes">Block chain</option>
+            <option value="audi">tech</option>
           </select>
         </div>
       </div>
       <Eventscards></Eventscards>
+      <Features />
     </div>
   );
 }
