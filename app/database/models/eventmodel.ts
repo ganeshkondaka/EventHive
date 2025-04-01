@@ -1,32 +1,30 @@
-import mongoose, { Schema } from "mongoose"
+import mongoose, { Schema } from "mongoose";
 
 export interface EVENTTYPE {
-    email: string,
-    title: string,
-    price: string,
-    feild: string,
-    organizer: string,
-    time: string,
-    place: string,
-    description: string,
-    organizer_link: string,
-    payment_link: string
+    email: string;
+    title: string;
+    price: string;
+    feild: string;
+    organizer: string;
+    time: string;
+    place: string;
+    description: string;
+    organizer_link: string;
+    payment_link: string;
 }
 
 const EventSchema = new Schema({
     email: {
         type: String,
-        require: true,
- 
+        required: true,
     },
     title: {
         type: String,
-        require: true
+        required: true,
     },
     price: {
         type: String,
-        require: true,
-
+        required: true,
     },
     feild: {
         type: String,
@@ -48,10 +46,11 @@ const EventSchema = new Schema({
     },
     payment_link: {
         type: String,
-    }
-
-})
+    },
+});
 
 // Check if the model already exists before defining it
-const eventmodel = mongoose.models.user_model || mongoose.model('Event_model', EventSchema)
-export default eventmodel
+const eventmodel =
+    mongoose.models.event_model || mongoose.model("event_model", EventSchema);
+
+export default eventmodel;
