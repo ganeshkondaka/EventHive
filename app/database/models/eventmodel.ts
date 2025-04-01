@@ -10,14 +10,14 @@ export interface EVENTTYPE {
     place: string,
     description: string,
     organizer_link: string,
-    payment_link: string,
+    payment_link: string
 }
 
 const EventSchema = new Schema({
     email: {
         type: String,
         require: true,
-        unique: true
+ 
     },
     title: {
         type: String,
@@ -26,7 +26,7 @@ const EventSchema = new Schema({
     price: {
         type: String,
         require: true,
-        unique: true
+
     },
     feild: {
         type: String,
