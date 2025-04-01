@@ -33,9 +33,9 @@ const Navbar = () => {
                     )}
                     {pathname.includes('/dashboard') && (
                         <>
-                            <Link href='/dashboard/home' className='hover:text-gray-600'>Home</Link>
-                            <Link href='/dashboard/create-event' className='hover:text-gray-600'>Create Event</Link>
-                            <Link href='/dashboard/myprofile' className='hover:text-gray-600'>My Profile</Link>
+                            <Link href='/dashboard/home' className='hover:text-gray-400'>Home</Link>
+                            <Link href='/dashboard/create-event' className='hover:text-gray-400'>Create Event</Link>
+                            <Link href='/dashboard/myprofile' className='hover:text-gray-400'>My Profile</Link>
                             <div className='bg-blue-800 w-8 h-8 rounded-full flex items-center justify-center text-xl'>G</div>
                         </>
                     )}
