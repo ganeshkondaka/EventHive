@@ -1,6 +1,7 @@
 'use client'
 
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 const Signup = () => {
@@ -9,6 +10,8 @@ const Signup = () => {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
 
+    const router = useRouter()
+
     const handle_submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         console.log('emai and password is :', username, email, password)
@@ -16,6 +19,7 @@ const Signup = () => {
             const response = await axios.post('/api/signup', { username, email, password })
             console.log('response :', response.data)
             await localStorage.setItem("event_token", response.data.token)
+            router.push('/dashboard/home')
         } catch (error) {
             console.log('failed to create user :', error)
         }
