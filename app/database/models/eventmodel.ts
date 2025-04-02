@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 export interface EVENTTYPE {
+    _id: string,
     email: string;
     title: string;
     price: string;
