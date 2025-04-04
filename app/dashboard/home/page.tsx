@@ -3,6 +3,7 @@
 import { EVENTTYPE } from '@/app/database/models/eventmodel';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { CgSpinner } from 'react-icons/cg';
 
@@ -11,21 +12,49 @@ const Page = () => {
   const [events, setEvents] = useState<EVENTTYPE[]>([]);
   const [visibleCount, setVisibleCount] = useState(6); // State to control the number of visible events
 
+  const router = useRouter()
+
   useEffect(() => {
     const getAllEvents = async () => {
+      const token = localStorage.getItem('event_token');
+      if (!token) {
+        console.log('No token found, redirecting to login...');
+        router.push('/login');
+        return
+      }
+
       try {
         setLoading(true);
-        const allEvents = await axios.get('/api/dashboard/get_allevents');
+
+        const headers = { Authorization: token };
+        const allEvents = await axios.get('/api/dashboard/get_allevents', { headers });
+
+        // console.log('allEvents from a page :', allEvents.data);
+        const auth: boolean = allEvents.data.auth;
+        // console.log('auth==false', auth == false)
+        if (auth == false) {
+          router.push('/login')
+          return
+        }
+
+        // console.log('auth from a page :', auth);
+
         setLoading(false);
         setEvents(allEvents.data.all_events);
+
+
       } catch (error) {
         setLoading(false);
         console.log('Failed to get events:', error);
+        router.push('/login'); // Redirect to login on error
+
+      } finally {
+        setLoading(false);
       }
     };
 
     getAllEvents();
-  }, []);
+  }, [router]);
 
   const handleShowMore = () => {
     setVisibleCount(events.length); // Show all events
