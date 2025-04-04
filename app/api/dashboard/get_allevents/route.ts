@@ -1,9 +1,7 @@
 import eventmodel from "@/app/database/models/eventmodel";
 import { connectDb } from "@/db";
 import jwt from "jsonwebtoken";
-import { User } from "lucide-react";
 import { NextResponse } from "next/server";
-import { decode } from "punycode";
 
 export async function GET(req: Request) {
     await connectDb()
