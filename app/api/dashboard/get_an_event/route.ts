@@ -6,21 +6,22 @@ import jwt from "jsonwebtoken";
 export async function GET(req: Request) {
     await connectDb();
 
-    const auth = req.headers.get("authorization");
-    if (!auth) {
-        return NextResponse.json({ msg: "Unauthorized, JWT token is required", auth: false });
-    }
+    // const auth = req.headers.get("authorization");
+    // if (!auth) {
+    //     return NextResponse.json({ msg: "Unauthorized, JWT token is required", auth: false });
+    // }
 
     const { searchParams } = new URL(req.url);
     const event_id = searchParams.get("event_id");
+    console.log("Event ID:", event_id);
 
     if (!event_id) {
         return NextResponse.json({ msg: "Event ID is required", auth: false });
     }
 
     try {
-        const decode_user = jwt.verify(auth, process.env.jwt_secret as string);
-        console.log("Decoded user:", decode_user);
+        // const decode_user = jwt.verify(auth, process.env.jwt_secret as string);
+        // console.log("Decoded user:", decode_user);
 
         const one_event = await eventmodel.findOne({ _id: event_id });
         if (!one_event) {

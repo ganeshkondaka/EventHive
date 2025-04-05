@@ -45,7 +45,7 @@ const Page = () => {
             <div className='flex flex-col gap-6 w-full md:w-2/4'>
                 <h1 className='text-2xl font-bold text-center md:text-left'>{one_event?.title}</h1>
                 <div className='flex flex-wrap gap-4 justify-center md:justify-start text-sm'>
-                    <p className='text-green-500 font-bold bg-zinc-700 rounded-full px-3 py-1'>{one_event?.price}</p>
+                    <p className='text-green-500 font-bold bg-zinc-700 rounded-full px-3 py-1 '>{one_event?.price}</p>
                     <p className='text-zinc-300 bg-zinc-700 rounded-full px-3 py-1'>{one_event?.feild}</p>
                 </div>
                 <p className='text-red-400 font-bold text-left md:text-left'>By: {one_event?.organizer}</p>
