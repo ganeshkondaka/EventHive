@@ -14,11 +14,11 @@ const Login = () => {
 
     const handle_submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('email and password is:', email, password);
+        // console.log('email and password is:', email, password);
         setLoading(true); // Set loading to true when login starts
         try {
             const response = await axios.post('/api/login', { email, password });
-            console.log('response:', response.data);
+            // console.log('response:', response.data);
             await localStorage.setItem('event_token', response.data.token);
             router.push('/dashboard/home');
         } catch (error) {
@@ -63,9 +63,8 @@ const Login = () => {
                     </div>
                     <button
                         type="submit"
-                        className={`w-full px-4 py-2 font-bold text-white rounded-lg transition duration-300 ${
-                            loading ? 'bg-violet-500 cursor-not-allowed' : 'bg-violet-600 hover:bg-violet-700'
-                        }`}
+                        className={`w-full px-4 py-2 font-bold text-white rounded-lg transition duration-300 ${loading ? 'bg-violet-500 cursor-not-allowed' : 'bg-violet-600 hover:bg-violet-700'}`
+                        }
                         disabled={loading} // Disable the button while loading
                     >
                         {loading ? (

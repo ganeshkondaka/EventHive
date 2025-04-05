@@ -3,25 +3,30 @@
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { CgSpinner } from 'react-icons/cg';
 
 const Signup = () => {
 
     const [username, setusername] = useState('')
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
+    const [loading, setLoading] = useState(false); // State to track loading
 
     const router = useRouter()
 
     const handle_submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log('emai and password is :', username, email, password)
+        // console.log('emai and password is :', username, email, password)
         try {
+            setLoading(true)
             const response = await axios.post('/api/signup', { username, email, password })
-            console.log('response :', response.data)
-            await localStorage.setItem("event_token", response.data.token)
+            // console.log('response :', response.data)
+            localStorage.setItem("event_token", response.data.token)
             router.push('/dashboard/home')
         } catch (error) {
             console.log('failed to create user :', error)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -74,9 +79,19 @@ const Signup = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full px-4 py-2 font-bold text-white bg-violet-600 rounded-lg hover:bg-violet-700 transition duration-300"
+                        className={`w-full px-4 py-2 font-bold text-white  rounded-lg hover:bg-violet-700 transition duration-300 ${loading ? 'bg-violet-500 cursor-not-allowed' : 'bg-violet-600 hover:bg-violet-700'}`}
+                        disabled={loading}
+
                     >
-                        Sign Up
+                        {
+                            loading ? (
+                                <div className="flex items-center justify-center">
+                                    <CgSpinner className="animate-spin mr-2" size={20} />
+                                    Signing up...
+                                </div>) : (
+                                'Signup'
+                            )
+                        }
                     </button>
                 </form>
                 <p className="text-sm text-center text-zinc-400">
