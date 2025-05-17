@@ -27,7 +27,7 @@ const Navbar = () => {
                     {pathname === '/' && (
                         <Link
                             href='/login'
-                            className='px-5 py-1 rounded-lg border border-purple-700 hover:bg-purple-700 hover:text-white text-xs md:text-lg'>
+                            className='px-5 py-1 rounded-lg border bg-zinc-50 hover:bg-zinc-400 text-black text-xs font-bold'>
                             Login
                         </Link>
                     )}
@@ -48,7 +48,7 @@ const Navbar = () => {
                     {pathname === '/' && (
                         <Link
                             href='/login'
-                            className='px-5 py-2 rounded-lg border border-purple-700 hover:bg-purple-700 hover:text-white'>
+                            className='px-5 py-2 rounded-lg border bg-zinc-50 hover:bg-zinc-400 text-black text-xs font-bold'>
                             Login
                         </Link>
                     )}
