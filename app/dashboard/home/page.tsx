@@ -70,7 +70,7 @@ const Page = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-evenly">
           {events.slice(0, visibleCount).map((item, index) => (
             <div
-              className="flex flex-col m-4 text-xs gap-4 p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700 hover:scale-105 transition-transform duration-300"
+              className="flex flex-col m-4 text-xs gap-4 p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700 hover:scale-105 hover:border-4 hover:border-white transition-transform duration-300"
               key={index}
             >
               <img
@@ -85,10 +85,10 @@ const Page = () => {
               <div className="text-green-300">{item.time}</div>
               <div className="text-lg font-bold">{item.title}</div>
               <div className='flex justify-between pt-6'>
-                <div className="text-yellow-400 border border-yellow-400 rounded-lg px-3 flex items-center justify-center ">{item.organizer}</div>
+                <div className="font-bold text-yellow-400 border border-yellow-400 rounded-lg px-3 flex items-center justify-center ">{item.organizer}</div>
                 <Link
                   href={`/dashboard/event/${item._id}`}
-                  className="animate-pulse text-zinc-200 text-4xl font-bold scale-95 hover:scale-100"
+                  className="animate-left-right text-4xl font-bold scale-95 hover:scale-110 text-green-400"
                 >
                   ⇨
                 </Link>
@@ -97,7 +97,7 @@ const Page = () => {
           ))}
         </div>
         {visibleCount < events.length && (
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center my-6">
             <button
               onClick={handleShowMore}
               className="px-6 py-2  text-white rounded-lg border border-yellow-600 hover:bg-white hover:text-black transition duration-300"

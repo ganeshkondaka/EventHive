@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className='max-w-7xl mx-auto flex justify-between items-center'>
                 {/* Logo */}
                 <div className='flex items-center'>
-                    <img src='/logo2.png' alt='logo' width={50} height={50} />
+                    <img src='/logo2.png' alt='logo' width={30} height={30} />
                     <p className='text-2xl font-bold px-2'>EventHive</p>
                 </div>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
                     {pathname.includes('/dashboard') && (
                         <>
                             <Link href='/dashboard/home' className='hover:text-gray-400'>Home</Link>
-                            <Link href='/dashboard/create-event' className='hover:text-gray-400'>Create Event</Link>
+                            <Link href='/dashboard/event/createEvent'  className='hover:text-gray-400'>Create Event</Link>
                             <Link href='/dashboard/myprofile' className='hover:text-gray-400'>My Profile</Link>
                             <div className='bg-blue-800 w-8 h-8 rounded-full flex items-center justify-center text-xl'>G</div>
                         </>
@@ -55,7 +55,7 @@ const Navbar = () => {
                     {pathname.includes('/dashboard') && (
                         <div className=' space-x-2 py-2 text-[12px] flex flex-col absolute right-0'>
                             <Link href='/dashboard/home' className='hover:text-gray-600'>Home</Link>
-                            <Link href='/dashboard/create-event' className='hover:text-gray-600'>Create Event</Link>
+                            <Link href='/dashboard/event/createEvent' className='hover:text-gray-600'>Create Event</Link>
                             <Link href='/dashboard/myprofile' className='hover:text-gray-600'>My Profile</Link>
                             <div className='bg-blue-800 w-6 h-6 rounded-full flex items-center justify-center text-sm '>G</div>
                         </div>
